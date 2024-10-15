@@ -1,0 +1,142 @@
+header {
+  background-image: url("/public/img/wallpaper2.jpg");
+  height: 820px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $background-prim-color;
+
+  & > .containerLogo {
+    z-index: 999;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+
+    & #logo {
+      width: 160px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      /* Opacité plus élevée en haut */ rgba(0, 0, 0, 0) 100%
+        /* Transparent en bas */
+    );
+    z-index: 1; /* Met le filtre au-dessus de l'image */
+  }
+
+  nav {
+    position: fixed; /* Assure que le nav est au-dessus du filtre */
+    z-index: 10; /* Met le nav au-dessus du filtre */
+    padding: 15px 0;
+
+    ul {
+      font-weight: 300;
+      font-size: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+
+      & li {
+        position: relative;
+        & a {
+          text-decoration: none;
+          color: white;
+          mix-blend-mode: difference;
+        }
+
+        &::before {
+          content: "•"; // Utilise un caractère point
+          color: $background-prim-color; // Point blanc
+          font-size: 1rem; // Taille du point
+          margin-right: 15px; // Espace avant le texte
+          display: inline-block;
+        }
+        &:first-child::before {
+          content: "";
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .content {
+    position: relative; /* Ajouté pour s'assurer que le contenu est au-dessus du filtre */
+    z-index: 2; /* Met le contenu au-dessus du filtre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    flex-direction: column;
+    gap: 25px;
+
+    span {
+      font-size: 15px;
+      font-weight: 300;
+      border-radius: 50px;
+      border: 1px $background-prim-color solid;
+      padding: 3px 10px;
+      box-shadow: 0px -2px 2px -1px $background-prim-color;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 80px;
+      font-weight: 400;
+      line-height: 1.1;
+
+      @media (max-width: 639px) {
+        font-size: 55px;
+      }
+    }
+
+    p {
+      max-width: 450px;
+      padding-inline: 25px;
+      text-align: center;
+      padding-bottom: 40px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+
+      > a {
+        height: 48px;
+        width: 188px;
+        border-radius: 5px;
+        color: #002f34;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 500;
+
+        @media (max-width: 639px) {
+          width: 100px;
+        }
+      }
+
+      #learn {
+        background-color: $sec-color;
+      }
+
+      #contact {
+        background-color: rgb(18 185 202);
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+#section--1 {
+  height: 430px;
+  background-color: $background-sec-color;
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr 2px 1fr;
+  align-items: center;
+  color: $prim-color;
+
+  & .statContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: $prim-color;
+
+    & h3 {
+      position: relative;
+      line-height: 0.7;
+      font-size: 135px;
+      font-size: 11vw;
+      font-weight: 300;
+      letter-spacing: -5px;
+      margin-bottom: 40px;
+
+      @media (max-width: 639px) {
+        letter-spacing: -2px;
+        font-size: 50px;
+        line-height: 1;
+        margin-bottom: 20px;
+      }
+
+      & span {
+        font-size: 40px;
+        position: absolute;
+      }
+    }
+  }
+
+  & > div:not(.separator) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+  }
+
+  & span {
+    text-align: center;
+    max-width: 350px;
+  }
+
+  & .separator {
+    width: 2px;
+    height: 205px;
+    background-image: linear-gradient(#80808038 32%, transparent 50%);
+    background-size: 2px 8px;
+  }
+
+  @media (max-width: 639px) {
+    height: 615px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2px 1fr 2px 1fr;
+  }
+}

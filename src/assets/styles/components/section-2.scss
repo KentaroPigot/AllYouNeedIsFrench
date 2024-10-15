@@ -1,0 +1,27 @@
+#section--2 {
+  height: 302px;
+  background-color: $background-prim-color;
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+  align-items: center;
+
+  & div {
+    width: 570px;
+
+    & h2 {
+      font-size: 43px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    & span {
+      font-size: 15px;
+    }
+  }
+  @media (max-width: 639px) {
+    height: 500px;
+    padding: 15px;
+  }
+}
